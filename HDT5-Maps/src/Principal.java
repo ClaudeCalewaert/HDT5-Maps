@@ -64,18 +64,18 @@ public class Principal {
 			String nombreCarta = entradaUsuario.nextLine();
 			
 			while ((linea = reader.readLine()) != null ) {
-				String[] partes = linea.split("|");
+				String[] partes = linea.split("[|]",2);
 				
 				String llave = partes[1];
 				String nombre = partes[0];
 				
-				System.out.println(nombre);
+				System.out.println(nombre+ "@" + llave);
 				
 				if (nombre.equals(nombreCarta)) {
 					if (mapa.containsKey(llave) == false) {
 						ArrayList<String> lista = new ArrayList<>();
 						lista.add(nombre);
-						mapa.put(nombre, lista);
+						mapa.put(llave, lista);
 					}
 					
 					else {
@@ -88,9 +88,10 @@ public class Principal {
 				
 			}
 		
-			if (mapa.containsValue(nombreCarta)==false) {
-				System.out.println("Error la carta ingresada no existe ");
-			}
+			
+			
+			//prueba de map
+			
 			
 			for (Entry<String, ArrayList<String>> ent: mapa.entrySet()) {
 				ArrayList<String> list = ent.getValue();
@@ -98,6 +99,7 @@ public class Principal {
 				System.out.println("Tipo: " + ent.getKey() + " Nombre: " + list.get(i));
 				}
 			}
+			
 			
 			//----------------------------------------------- OPCION NO 2 -------------------------------------------------------//
 		}
