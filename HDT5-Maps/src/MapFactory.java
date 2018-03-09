@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -5,9 +6,9 @@ import java.util.TreeMap;
 
 public class MapFactory {
 	
-	public Map<String, String> crearMapa(int numero) {
+	public Map<String, ArrayList<String>> crearMapa(int numero) {
 		
-		Map<String,String> map = null;
+		Map<String,ArrayList<String>> map = null;
 		
 		if (numero == 1) {
 			return new HashMap<>();
